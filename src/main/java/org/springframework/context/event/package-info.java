@@ -1,4 +1,4 @@
-
+﻿
 /**
  *
  * Support classes for application events, like standard context events.

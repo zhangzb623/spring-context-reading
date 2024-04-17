@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Support classes for annotation-based constraint evaluation,
  * e.g. using a JSR-303 Bean Validation provider.
  *

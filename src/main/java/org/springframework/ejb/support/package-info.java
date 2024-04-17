@@ -1,4 +1,4 @@
-/**
+﻿/**
  *
  * <p>Base classes to make implementing EJB 2.x beans simpler and less error-prone,
  * as well as guaranteeing a Spring BeanFactory is available to such EJBs.

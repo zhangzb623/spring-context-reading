@@ -1,4 +1,4 @@
-
+﻿
 /**
  *
  * Annotations denoting the roles of types or methods in the overall architecture

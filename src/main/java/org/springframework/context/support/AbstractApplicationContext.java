@@ -1,4 +1,4 @@
-/*
+ï»¿/*
  * Copyright 2002-2012 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -152,11 +152,11 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 	 */
 	public static final String APPLICATION_EVENT_MULTICASTER_BEAN_NAME = "applicationEventMulticaster";
 
-	//¾²Ì¬³õÊ¼»¯¿é£¬ÔÚÕû¸öÈİÆ÷´´½¨¹ı³ÌÖĞÖ»Ö´ĞĞÒ»´Î
+	//é™æ€åˆå§‹åŒ–å—ï¼Œåœ¨æ•´ä¸ªå®¹å™¨åˆ›å»ºè¿‡ç¨‹ä¸­åªæ‰§è¡Œä¸€æ¬¡
 	static {
 		// Eagerly load the ContextClosedEvent class to avoid weird classloader issues
 		// on application shutdown in WebLogic 8.1. (Reported by Dustin Woods.)
-		//ÎªÁË±ÜÃâÓ¦ÓÃ³ÌĞòÔÚWeblogic8.1¹Ø±ÕÊ±³öÏÖÀà¼ÓÔØÒì³£¼ÓÔØÎÊÌâ£¬¼ÓÔØIOCÈİÆ÷¹Ø±ÕÊÂ¼ş(ContextClosedEvent)Àà
+		//ä¸ºäº†é¿å…åº”ç”¨ç¨‹åºåœ¨Weblogic8.1å…³é—­æ—¶å‡ºç°ç±»åŠ è½½å¼‚å¸¸åŠ è½½é—®é¢˜ï¼ŒåŠ è½½IOCå®¹å™¨å…³é—­äº‹ä»¶(ContextClosedEvent)ç±»
 		ContextClosedEvent.class.getName();
 	}
 
@@ -218,7 +218,7 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 	 * Create a new AbstractApplicationContext with no parent.
 	 */
 	public AbstractApplicationContext() {
-		//½âÎöÎÒÃÇµÄ×ÊÔ´ÎÄ¼ş£¬¶¯Ì¬Æ¥ÅäµÄ¹ı³Ì
+		//è§£ææˆ‘ä»¬çš„èµ„æºæ–‡ä»¶ï¼ŒåŠ¨æ€åŒ¹é…çš„è¿‡ç¨‹
 		this.resourcePatternResolver = getResourcePatternResolver();
 	}
 
@@ -226,7 +226,7 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 	 * Create a new AbstractApplicationContext with the given parent context.
 	 * @param parent the parent context
 	 */
-	//FileSystemXmlApplicationContextµ÷ÓÃ¸¸Àà¹¹Ôì·½·¨µ÷ÓÃµÄ¾ÍÊÇ¸Ã·½·¨
+	//FileSystemXmlApplicationContextè°ƒç”¨çˆ¶ç±»æ„é€ æ–¹æ³•è°ƒç”¨çš„å°±æ˜¯è¯¥æ–¹æ³•
 	public AbstractApplicationContext(ApplicationContext parent) {
 		this();
 		setParent(parent);
@@ -366,14 +366,14 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 		return this.lifecycleProcessor;
 	}
 
-	//»ñÈ¡Ò»¸öSpring SourceµÄ¼ÓÔØÆ÷ÓÃÓÚ¶ÁÈëBeanµÄ¶¨Òå×ÊÔ´ÎÄ¼ş
+	//è·å–ä¸€ä¸ªSpring Sourceçš„åŠ è½½å™¨ç”¨äºè¯»å…¥Beançš„å®šä¹‰èµ„æºæ–‡ä»¶
 	protected ResourcePatternResolver getResourcePatternResolver() {
-		//AbstractApplicationContext¼Ì³ĞDefaultResourceLoader£¬Òò´ËÒ²ÊÇÒ»¸ö×ÊÔ´¼ÓÔØÆ÷
-        //Spring×ÊÔ´¼ÓÔØÆ÷£¬ÆägetResource(String location)·½·¨ÓÃÓÚÔØÈë×ÊÔ´
-		//¹¹Ôì·½·¨PathMatchingResourcePatternResolver(ResourceLoader resourceLoader)´«ÈëµÄÊÇÒ»¸öResourceLoader¶ÔÏó£¬
-		//ÓÉÓÚAbstractApplicationContext extends DefaultResourceLoader£¬
-		//¶øDefaultResourceLoader implements ResourceLoader£¬
-		//ËùÒÔ new PathMatchingResourcePatternResolver(resourceLoader)Ê±£¬¿ÉÒÔ´«Èëthis
+		//AbstractApplicationContextç»§æ‰¿DefaultResourceLoaderï¼Œå› æ­¤ä¹Ÿæ˜¯ä¸€ä¸ªèµ„æºåŠ è½½å™¨
+        //Springèµ„æºåŠ è½½å™¨ï¼Œå…¶getResource(String location)æ–¹æ³•ç”¨äºè½½å…¥èµ„æº
+		//æ„é€ æ–¹æ³•PathMatchingResourcePatternResolver(ResourceLoader resourceLoader)ä¼ å…¥çš„æ˜¯ä¸€ä¸ªResourceLoaderå¯¹è±¡ï¼Œ
+		//ç”±äºAbstractApplicationContext extends DefaultResourceLoaderï¼Œ
+		//è€ŒDefaultResourceLoader implements ResourceLoaderï¼Œ
+		//æ‰€ä»¥ new PathMatchingResourcePatternResolver(resourceLoader)æ—¶ï¼Œå¯ä»¥ä¼ å…¥this
 		return new PathMatchingResourcePatternResolver(this);
 	}
 
@@ -439,62 +439,62 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 	}
 
 	/**
-	 * ÈİÆ÷³õÊ¼»¯µÄ¹ı³Ì£ºBeanDefinitionµÄResource¶¨Î»¡¢BeanDefinitionµÄÔØÈë¡¢BeanDefinitionµÄ×¢²á¡£
-	 * BeanDefinitionµÄÔØÈëºÍbeanµÄÒÀÀµ×¢ÈëÊÇÁ½¸ö¶ÀÁ¢µÄ¹ı³Ì£¬ÒÀÀµ×¢ÈëÒ»°ã·¢ÉúÔÚ Ó¦ÓÃµÚÒ»´Îµ÷ÓÃgetBean()Ê±¡£
+	 * å®¹å™¨åˆå§‹åŒ–çš„è¿‡ç¨‹ï¼šBeanDefinitionçš„Resourceå®šä½ã€BeanDefinitionçš„è½½å…¥ã€BeanDefinitionçš„æ³¨å†Œã€‚
+	 * BeanDefinitionçš„è½½å…¥å’Œbeançš„ä¾èµ–æ³¨å…¥æ˜¯ä¸¤ä¸ªç‹¬ç«‹çš„è¿‡ç¨‹ï¼Œä¾èµ–æ³¨å…¥ä¸€èˆ¬å‘ç”Ÿåœ¨ åº”ç”¨ç¬¬ä¸€æ¬¡è°ƒç”¨getBean()æ—¶ã€‚
 	 * 
-	 * ÁíÍâĞèÒª×¢ÒâµÄÊÇ£¬IoCÈİÆ÷ÓĞÒ»¸öÔ¤ÊµÀı»¯µÄÅäÖÃ£¨½«ÅäÖÃÎÄ¼şÖĞbeanµÄlazyInitÊôĞÔÉèÎªtrue£¬
-	 * ´Ëbean½«ÔÚÈİÆ÷³õÊ¼»¯Ê±½øĞĞÒÀÀµ×¢Èë£¬¶ø²»»áµÈµ½getBean()·½·¨µ÷ÓÃÊ±²Å½øĞĞ
+	 * å¦å¤–éœ€è¦æ³¨æ„çš„æ˜¯ï¼ŒIoCå®¹å™¨æœ‰ä¸€ä¸ªé¢„å®ä¾‹åŒ–çš„é…ç½®ï¼ˆå°†é…ç½®æ–‡ä»¶ä¸­beançš„lazyInitå±æ€§è®¾ä¸ºtrueï¼Œ
+	 * æ­¤beanå°†åœ¨å®¹å™¨åˆå§‹åŒ–æ—¶è¿›è¡Œä¾èµ–æ³¨å…¥ï¼Œè€Œä¸ä¼šç­‰åˆ°getBean()æ–¹æ³•è°ƒç”¨æ—¶æ‰è¿›è¡Œ
 	 */
 	public void refresh() throws BeansException, IllegalStateException {
 		synchronized (this.startupShutdownMonitor) {
-			//×¼±¸Ë¢ĞÂ£¬»ñÈ¡ÈİÆ÷µÄµ±Ç°Ê±¼ä£¬Í¬Ê±¸øÈİÆ÷ÉèÖÃÍ¬²½±êÊ¶
+			//å‡†å¤‡åˆ·æ–°ï¼Œè·å–å®¹å™¨çš„å½“å‰æ—¶é—´ï¼ŒåŒæ—¶ç»™å®¹å™¨è®¾ç½®åŒæ­¥æ ‡è¯†
 			prepareRefresh();
 
-			//¸æËß×ÓÀàÆô¶¯refreshBeanFactory()·½·¨£¬Bean¶¨Òå×ÊÔ´ÎÄ¼şµÄÔØÈë´Ó×ÓÀàµÄrefreshBeanFactory()·½·¨Æô¶¯¿ªÊ¼
+			//å‘Šè¯‰å­ç±»å¯åŠ¨refreshBeanFactory()æ–¹æ³•ï¼ŒBeanå®šä¹‰èµ„æºæ–‡ä»¶çš„è½½å…¥ä»å­ç±»çš„refreshBeanFactory()æ–¹æ³•å¯åŠ¨å¼€å§‹
 			ConfigurableListableBeanFactory beanFactory = obtainFreshBeanFactory();
 
-			//ÎªBeanFactoryÅäÖÃÈİÆ÷ÌØĞÔ£¬ÀıÈçÀà¼ÓÔØÆ÷¡¢ÊÂ¼ş´¦ÀíÆ÷µÈ
+			//ä¸ºBeanFactoryé…ç½®å®¹å™¨ç‰¹æ€§ï¼Œä¾‹å¦‚ç±»åŠ è½½å™¨ã€äº‹ä»¶å¤„ç†å™¨ç­‰
 			prepareBeanFactory(beanFactory);
 
 			try {
-				//ÎªÈİÆ÷µÄÄ³Ğ©×ÓÀàÖ¸¶¨ÌØÊâµÄBeanPostÊÂ¼ş´¦ÀíÆ÷
+				//ä¸ºå®¹å™¨çš„æŸäº›å­ç±»æŒ‡å®šç‰¹æ®Šçš„BeanPostäº‹ä»¶å¤„ç†å™¨
 				postProcessBeanFactory(beanFactory);
 
-				//µ÷ÓÃËùÓĞ×¢²áµÄBeanFactoryPostProcessorµÄBean
+				//è°ƒç”¨æ‰€æœ‰æ³¨å†Œçš„BeanFactoryPostProcessorçš„Bean
 				invokeBeanFactoryPostProcessors(beanFactory);
 
-				//ÎªBeanFactory×¢²áBeanPostÊÂ¼ş´¦ÀíÆ÷.  
-		        //BeanPostProcessorÊÇBeanºóÖÃ´¦ÀíÆ÷£¬ÓÃÓÚ¼àÌıÈİÆ÷´¥·¢µÄÊÂ¼ş 
+				//ä¸ºBeanFactoryæ³¨å†ŒBeanPostäº‹ä»¶å¤„ç†å™¨.  
+		        //BeanPostProcessoræ˜¯Beanåç½®å¤„ç†å™¨ï¼Œç”¨äºç›‘å¬å®¹å™¨è§¦å‘çš„äº‹ä»¶ 
 				registerBeanPostProcessors(beanFactory);
 
-				//³õÊ¼»¯ĞÅÏ¢Ô´£¬ºÍ¹ú¼Ê»¯Ïà¹Ø.
+				//åˆå§‹åŒ–ä¿¡æ¯æºï¼Œå’Œå›½é™…åŒ–ç›¸å…³.
 				initMessageSource();
 
-				//³õÊ¼»¯ÈİÆ÷ÊÂ¼ş´«²¥Æ÷
+				//åˆå§‹åŒ–å®¹å™¨äº‹ä»¶ä¼ æ’­å™¨
 				initApplicationEventMulticaster();
 
-				//µ÷ÓÃ×ÓÀàµÄÄ³Ğ©ÌØÊâBean³õÊ¼»¯·½·¨
+				//è°ƒç”¨å­ç±»çš„æŸäº›ç‰¹æ®ŠBeanåˆå§‹åŒ–æ–¹æ³•
 				onRefresh();
 
-				//ÎªÊÂ¼ş´«²¥Æ÷×¢²áÊÂ¼ş¼àÌıÆ÷.
+				//ä¸ºäº‹ä»¶ä¼ æ’­å™¨æ³¨å†Œäº‹ä»¶ç›‘å¬å™¨.
 				registerListeners();
 
 				/**
-				 * £¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡
-				 * ³õÊ¼»¯Bean£¬²¢¶Ôlazy-initÊôĞÔ½øĞĞ´¦Àí
-				 * £¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡
+				 * ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼
+				 * åˆå§‹åŒ–Beanï¼Œå¹¶å¯¹lazy-initå±æ€§è¿›è¡Œå¤„ç†
+				 * ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼
 				 */
 				finishBeanFactoryInitialization(beanFactory);
 
-				//³õÊ¼»¯ÈİÆ÷µÄÉúÃüÖÜÆÚÊÂ¼ş´¦ÀíÆ÷£¬²¢·¢²¼ÈİÆ÷µÄÉúÃüÖÜÆÚÊÂ¼ş
+				//åˆå§‹åŒ–å®¹å™¨çš„ç”Ÿå‘½å‘¨æœŸäº‹ä»¶å¤„ç†å™¨ï¼Œå¹¶å‘å¸ƒå®¹å™¨çš„ç”Ÿå‘½å‘¨æœŸäº‹ä»¶
 				finishRefresh();
 			}
 
 			catch (BeansException ex) {
-				//Ïú»ÙÒÔ´´½¨µÄµ¥Ì¬Bean
+				//é”€æ¯ä»¥åˆ›å»ºçš„å•æ€Bean
 				destroyBeans();
 
-				//È¡Ïûrefresh²Ù×÷£¬ÖØÖÃÈİÆ÷µÄÍ¬²½±êÊ¶.
+				//å–æ¶ˆrefreshæ“ä½œï¼Œé‡ç½®å®¹å™¨çš„åŒæ­¥æ ‡è¯†.
 				cancelRefresh(ex);
 
 				throw ex;
@@ -510,7 +510,7 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 		this.startupDate = System.currentTimeMillis();
 
 		synchronized (this.activeMonitor) {
-			// active±ê¼ÇÁËµ±Ç°contextÊÇ·ñ´¦ÓÚ»î¶¯×´Ì¬
+			// activeæ ‡è®°äº†å½“å‰contextæ˜¯å¦å¤„äºæ´»åŠ¨çŠ¶æ€
 			this.active = true;
 		}
 
@@ -518,7 +518,7 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 			logger.info("Refreshing " + this);
 		}
 
-		// ÔÚÉÏÏÂÎÄ»·¾³ÖĞ³õÊ¼»¯ÈÎºÎÕ¼Î»·ûÊôĞÔ×ÊÔ´
+		// åœ¨ä¸Šä¸‹æ–‡ç¯å¢ƒä¸­åˆå§‹åŒ–ä»»ä½•å ä½ç¬¦å±æ€§èµ„æº
 		initPropertySources();
 
 		// Validate that all properties marked as required are resolvable
@@ -537,12 +537,12 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 
 	/**
 	 * Tell the subclass to refresh the internal bean factory.
-	 * ¸æËß×ÓÀàÈ¥Ë¢ĞÂÄÚ²¿µÄbeanFactory
+	 * å‘Šè¯‰å­ç±»å»åˆ·æ–°å†…éƒ¨çš„beanFactory
 	 */
 	protected ConfigurableListableBeanFactory obtainFreshBeanFactory() {
-		//ÕâÀïÊ¹ÓÃÁËÎ¯ÅÉÉè¼ÆÄ£Ê½£¬×Ô¼º¶¨ÒåÁË³éÏóµÄrefreshBeanFactory()·½·¨£¬¾ßÌåÊµÏÖ½»¸øÁË×Ô¼ºµÄ×ÓÀà
+		//è¿™é‡Œä½¿ç”¨äº†å§”æ´¾è®¾è®¡æ¨¡å¼ï¼Œè‡ªå·±å®šä¹‰äº†æŠ½è±¡çš„refreshBeanFactory()æ–¹æ³•ï¼Œå…·ä½“å®ç°äº¤ç»™äº†è‡ªå·±çš„å­ç±»
 		refreshBeanFactory();
-		//getBeanFactory()Ò²ÊÇÒ»¸ö³éÏó·½·¨£¬Î¯ÅÉ¸ø×ÓÀàÊµÏÖ
+		//getBeanFactory()ä¹Ÿæ˜¯ä¸€ä¸ªæŠ½è±¡æ–¹æ³•ï¼Œå§”æ´¾ç»™å­ç±»å®ç°
 		ConfigurableListableBeanFactory beanFactory = getBeanFactory();
 		if (logger.isDebugEnabled()) {
 			logger.debug("Bean factory for " + getDisplayName() + ": " + beanFactory);
@@ -551,15 +551,15 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 	}
 
 	/**
-	 * ÎªÈİÆ÷ÅäÖÃClassLoader¡¢PropertyEditor¡¢BeanPostProcessorµÈ£¬ÎªÈİÆ÷µÄÆô¶¯×öºÃ±ØÒªµÄ×¼±¸
+	 * ä¸ºå®¹å™¨é…ç½®ClassLoaderã€PropertyEditorã€BeanPostProcessorç­‰ï¼Œä¸ºå®¹å™¨çš„å¯åŠ¨åšå¥½å¿…è¦çš„å‡†å¤‡
 	 */
 	protected void prepareBeanFactory(ConfigurableListableBeanFactory beanFactory) {
-		//¸æËßÄÚ²¿bean¹¤³§Ê¹ÓÃÉÏÏÂÎÄµÄÀà¼ÓÔØÆ÷
+		//å‘Šè¯‰å†…éƒ¨beanå·¥å‚ä½¿ç”¨ä¸Šä¸‹æ–‡çš„ç±»åŠ è½½å™¨
 		beanFactory.setBeanClassLoader(getClassLoader());
 		beanFactory.setBeanExpressionResolver(new StandardBeanExpressionResolver());
 		beanFactory.addPropertyEditorRegistrar(new ResourceEditorRegistrar(this, getEnvironment()));
 
-		//Ê¹ÓÃÉÏÏÂÎÄ»Øµ÷ÅäÖÃbean¹¤³§
+		//ä½¿ç”¨ä¸Šä¸‹æ–‡å›è°ƒé…ç½®beanå·¥å‚
 		beanFactory.addBeanPostProcessor(new ApplicationContextAwareProcessor(this));
 		beanFactory.ignoreDependencyInterface(ResourceLoaderAware.class);
 		beanFactory.ignoreDependencyInterface(ApplicationEventPublisherAware.class);
@@ -567,20 +567,20 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 		beanFactory.ignoreDependencyInterface(ApplicationContextAware.class);
 		beanFactory.ignoreDependencyInterface(EnvironmentAware.class);
 
-		//BeanFactory½Ó¿ÚÎ´ÔÚÆÕÍ¨¹¤³§ÖĞ×¢²áÎª¿É½âÎöÀàĞÍ£¬MessageSource×¢²á£¨²¢Îª×Ô¶¯Á¬½ÓÕÒµ½£©Îªbean
+		//BeanFactoryæ¥å£æœªåœ¨æ™®é€šå·¥å‚ä¸­æ³¨å†Œä¸ºå¯è§£æç±»å‹ï¼ŒMessageSourceæ³¨å†Œï¼ˆå¹¶ä¸ºè‡ªåŠ¨è¿æ¥æ‰¾åˆ°ï¼‰ä¸ºbean
 		beanFactory.registerResolvableDependency(BeanFactory.class, beanFactory);
 		beanFactory.registerResolvableDependency(ResourceLoader.class, this);
 		beanFactory.registerResolvableDependency(ApplicationEventPublisher.class, this);
 		beanFactory.registerResolvableDependency(ApplicationContext.class, this);
 
-		//¼ì²âLoadTimeWeaver²¢×¼±¸±àÖ¯£¬Èç¹ûÄÜÕÒµ½
+		//æ£€æµ‹LoadTimeWeaverå¹¶å‡†å¤‡ç¼–ç»‡ï¼Œå¦‚æœèƒ½æ‰¾åˆ°
 		if (beanFactory.containsBean(LOAD_TIME_WEAVER_BEAN_NAME)) {
 			beanFactory.addBeanPostProcessor(new LoadTimeWeaverAwareProcessor(beanFactory));
 			// Set a temporary ClassLoader for type matching.
 			beanFactory.setTempClassLoader(new ContextTypeMatchClassLoader(beanFactory.getBeanClassLoader()));
 		}
 
-		//×¢²áÄ¬ÈÏ»·¾³bean
+		//æ³¨å†Œé»˜è®¤ç¯å¢ƒbean
 		if (!beanFactory.containsLocalBean(ENVIRONMENT_BEAN_NAME)) {
 			beanFactory.registerSingleton(ENVIRONMENT_BEAN_NAME, getEnvironment());
 		}
@@ -909,17 +909,17 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 		getApplicationEventMulticaster().addApplicationListener(listener);
 	}
 
-	//¶ÔÅäÖÃÁËlazy-initÊôĞÔµÄBean½øĞĞÔ¤ÊµÀı»¯´¦Àí 
+	//å¯¹é…ç½®äº†lazy-initå±æ€§çš„Beanè¿›è¡Œé¢„å®ä¾‹åŒ–å¤„ç† 
 	protected void finishBeanFactoryInitialization(ConfigurableListableBeanFactory beanFactory) {
-		//ÕâÊÇSpring3ÒÔºóĞÂ¼ÓµÄ´úÂë£¬ÎªÈİÆ÷Ö¸¶¨Ò»¸ö×ª»»·şÎñ(ConversionService)  
-	    //ÔÚ¶ÔÄ³Ğ©BeanÊôĞÔ½øĞĞ×ª»»Ê±Ê¹ÓÃ  
+		//è¿™æ˜¯Spring3ä»¥åæ–°åŠ çš„ä»£ç ï¼Œä¸ºå®¹å™¨æŒ‡å®šä¸€ä¸ªè½¬æ¢æœåŠ¡(ConversionService)  
+	    //åœ¨å¯¹æŸäº›Beanå±æ€§è¿›è¡Œè½¬æ¢æ—¶ä½¿ç”¨  
 		if (beanFactory.containsBean(CONVERSION_SERVICE_BEAN_NAME) &&
 				beanFactory.isTypeMatch(CONVERSION_SERVICE_BEAN_NAME, ConversionService.class)) {
 			beanFactory.setConversionService(
 					/**
-					 * £¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡
-					 * ÔÚÕâÀïµ÷ÓÃÁËgetBean()·½·¨£¬´¥·¢ÒÀÀµ×¢Èë
-					 * £¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡
+					 * ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼
+					 * åœ¨è¿™é‡Œè°ƒç”¨äº†getBean()æ–¹æ³•ï¼Œè§¦å‘ä¾èµ–æ³¨å…¥
+					 * ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼
 					 */
 					beanFactory.getBean(CONVERSION_SERVICE_BEAN_NAME, ConversionService.class));
 		}
@@ -929,13 +929,13 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 			getBean(weaverAwareName);
 		}
 
-		//ÎªÁËÀàĞÍÆ¥Åä£¬Í£Ö¹Ê¹ÓÃÁÙÊ±µÄÀà¼ÓÔØÆ÷  
+		//ä¸ºäº†ç±»å‹åŒ¹é…ï¼Œåœæ­¢ä½¿ç”¨ä¸´æ—¶çš„ç±»åŠ è½½å™¨  
 		beanFactory.setTempClassLoader(null);
 
-		//»º´æÈİÆ÷ÖĞËùÓĞ×¢²áµÄBeanDefinitionÔªÊı¾İ£¬ÒÔ·À±»ĞŞ¸Ä
+		//ç¼“å­˜å®¹å™¨ä¸­æ‰€æœ‰æ³¨å†Œçš„BeanDefinitionå…ƒæ•°æ®ï¼Œä»¥é˜²è¢«ä¿®æ”¹
 		beanFactory.freezeConfiguration();
 
-		//¶ÔÅäÖÃÁËlazy-initÊôĞÔµÄµ¥Ì¬Ä£Ê½Bean½øĞĞÔ¤ÊµÀı»¯´¦Àí
+		//å¯¹é…ç½®äº†lazy-initå±æ€§çš„å•æ€æ¨¡å¼Beanè¿›è¡Œé¢„å®ä¾‹åŒ–å¤„ç†
 		beanFactory.preInstantiateSingletons();
 	}
 
@@ -1029,7 +1029,7 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 	}
 
 	/**
-	 * ÈİÆ÷¹Ø±ÕµÄ¾ßÌåÊµÏÖ£¬ÏÈ·¢³öÈİÆ÷¹Ø±ÕµÄĞÅºÅ£¬È»ºó½«beanÖğ¸ö¹Ø±Õ£¬×îºó¹Ø±ÕÈİÆ÷×ÔÉí
+	 * å®¹å™¨å…³é—­çš„å…·ä½“å®ç°ï¼Œå…ˆå‘å‡ºå®¹å™¨å…³é—­çš„ä¿¡å·ï¼Œç„¶åå°†beané€ä¸ªå…³é—­ï¼Œæœ€åå…³é—­å®¹å™¨è‡ªèº«
 	 */
 	protected void doClose() {
 		boolean actuallyClose;
@@ -1046,14 +1046,14 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 			LiveBeansView.unregisterApplicationContext(this);
 
 			try {
-				//·¢²¼¹Ø±ÕÊÂ¼ş
+				//å‘å¸ƒå…³é—­äº‹ä»¶
 				publishEvent(new ContextClosedEvent(this));
 			}
 			catch (Throwable ex) {
 				logger.warn("Exception thrown from ApplicationListener handling ContextClosedEvent", ex);
 			}
 
-			//Í£Ö¹ËùÓĞÉúÃüÖÜÆÚbean£¬ÒÔ±ÜÃâÔÚµ¥¸öÏú»Ù¹ı³ÌÖĞ³öÏÖÑÓ³Ù
+			//åœæ­¢æ‰€æœ‰ç”Ÿå‘½å‘¨æœŸbeanï¼Œä»¥é¿å…åœ¨å•ä¸ªé”€æ¯è¿‡ç¨‹ä¸­å‡ºç°å»¶è¿Ÿ
 			try {
 				getLifecycleProcessor().onClose();
 			}
@@ -1063,10 +1063,10 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 
 			destroyBeans();
 
-			//¹Ø±Õ´ËÉÏÏÂÎÄ±¾ÉíµÄ×´Ì¬
+			//å…³é—­æ­¤ä¸Šä¸‹æ–‡æœ¬èº«çš„çŠ¶æ€
 			closeBeanFactory();
 
-			//Èç¹û×ÓÀàÔ¸Òâ£¬ÈÃËüÃÇ×öÒ»Ğ©×îºóµÄÇåÀí
+			//å¦‚æœå­ç±»æ„¿æ„ï¼Œè®©å®ƒä»¬åšä¸€äº›æœ€åçš„æ¸…ç†
 			onClose();
 
 			synchronized (this.activeMonitor) {

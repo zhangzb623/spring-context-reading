@@ -1,4 +1,4 @@
-
+﻿
 /**
  *
  * Provides a strategy for ObjectName creation. Used by MBeanExporter

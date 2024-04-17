@@ -1,4 +1,4 @@
-/**
+﻿/**
  *
  * Scheduling convenience classes for the JDK 1.5+ Executor mechanism
  * in the {@code java.util.concurrent} package, allowing to set up a

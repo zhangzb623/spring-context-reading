@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Support classes for integrating a JSR-303 Bean Validation provider
  * (such as Hibernate Validator 4.0) into a Spring ApplicationContext
  * and in particular with Spring's data binding and validation APIs.

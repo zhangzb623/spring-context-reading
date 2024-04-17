@@ -1,4 +1,4 @@
-/*
+ï»¿/*
  * Copyright 2002-2010 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -62,22 +62,22 @@ public class FileSystemXmlApplicationContext extends AbstractXmlApplicationConte
 	}
 
 	/**
-	 * ÏÂÃæÕâ4¸ö¹¹Ôì·½·¨¶¼µ÷ÓÃÁËµÚ5¸ö¹¹Ôì·½·¨
+	 * ä¸‹é¢è¿™4ä¸ªæ„é€ æ–¹æ³•éƒ½è°ƒç”¨äº†ç¬¬5ä¸ªæ„é€ æ–¹æ³•
 	 * @param configLocation
 	 * @throws BeansException
 	 */
 	
-	//configLocation°üº¬ÁËBeanDefinitionËùÔÚµÄÎÄ¼şÂ·¾¶
+	//configLocationåŒ…å«äº†BeanDefinitionæ‰€åœ¨çš„æ–‡ä»¶è·¯å¾„
 	public FileSystemXmlApplicationContext(String configLocation) throws BeansException {
 		this(new String[] {configLocation}, true, null);
 	}
 
-	//¿ÉÒÔ¶¨Òå¶à¸öBeanDefinitionËùÔÚµÄÎÄ¼şÂ·¾¶
+	//å¯ä»¥å®šä¹‰å¤šä¸ªBeanDefinitionæ‰€åœ¨çš„æ–‡ä»¶è·¯å¾„
 	public FileSystemXmlApplicationContext(String... configLocations) throws BeansException {
 		this(configLocations, true, null);
 	}
 
-	//ÔÚ¶¨Òå¶à¸öBeanDefinitionËùÔÚµÄÎÄ¼şÂ·¾¶ µÄÍ¬Ê±£¬»¹ÄÜÖ¸¶¨×Ô¼ºµÄË«Ç×IoCÈİÆ÷(¸¸ÈİÆ÷µÄ×÷ÓÃÊÇÊ²Ã´£¿´Ó×ÓÈİÆ÷ÖĞget²»µ½µÄbean»áÈ¥¸¸ÈİÆ÷ÕÒ£¿)
+	//åœ¨å®šä¹‰å¤šä¸ªBeanDefinitionæ‰€åœ¨çš„æ–‡ä»¶è·¯å¾„ çš„åŒæ—¶ï¼Œè¿˜èƒ½æŒ‡å®šè‡ªå·±çš„åŒäº²IoCå®¹å™¨(çˆ¶å®¹å™¨çš„ä½œç”¨æ˜¯ä»€ä¹ˆï¼Ÿä»å­å®¹å™¨ä¸­getä¸åˆ°çš„beanä¼šå»çˆ¶å®¹å™¨æ‰¾ï¼Ÿ)
 	public FileSystemXmlApplicationContext(String[] configLocations, ApplicationContext parent) throws BeansException {
 		this(configLocations, true, parent);
 	}
@@ -87,25 +87,25 @@ public class FileSystemXmlApplicationContext extends AbstractXmlApplicationConte
 	}
 
 	/**
-	 * Èç¹ûÓ¦ÓÃÖ±½ÓÊ¹ÓÃFileSystemXmlApplicationContext½øĞĞÊµÀı»¯£¬Ôò¶¼»á½øµ½Õâ¸ö¹¹Ôì·½·¨ÖĞÀ´
+	 * å¦‚æœåº”ç”¨ç›´æ¥ä½¿ç”¨FileSystemXmlApplicationContextè¿›è¡Œå®ä¾‹åŒ–ï¼Œåˆ™éƒ½ä¼šè¿›åˆ°è¿™ä¸ªæ„é€ æ–¹æ³•ä¸­æ¥
 	 */
 	public FileSystemXmlApplicationContext(String[] configLocations, boolean refresh, ApplicationContext parent)
 			throws BeansException {
 
-		//¶¯Ì¬µØÈ·¶¨ÓÃÄÄ¸ö¼ÓÔØÆ÷È¥¼ÓÔØÎÒÃÇµÄÅäÖÃÎÄ¼ş
+		//åŠ¨æ€åœ°ç¡®å®šç”¨å“ªä¸ªåŠ è½½å™¨å»åŠ è½½æˆ‘ä»¬çš„é…ç½®æ–‡ä»¶
 		super(parent);
-		//¸æËß¶ÁÈ¡Æ÷ ÅäÖÃÎÄ¼ş·ÅÔÚÄÄÀï£¬¸Ã·½·¨¼Ì³ĞÓÚÒ¯ÀàAbstractRefreshableApplicationContext
+		//å‘Šè¯‰è¯»å–å™¨ é…ç½®æ–‡ä»¶æ”¾åœ¨å“ªé‡Œï¼Œè¯¥æ–¹æ³•ç»§æ‰¿äºçˆ·ç±»AbstractRefreshableApplicationContext
 		setConfigLocations(configLocations);
 		if (refresh) {
-			//ÈİÆ÷³õÊ¼»¯
+			//å®¹å™¨åˆå§‹åŒ–
 			refresh();
 		}
 	}
 
 
 	/**
-	 * ÊµÀı»¯Ò»¸öFileSystemResource²¢·µ»Ø£¬ÒÔ±ãºóĞø¶Ô×ÊÔ´µÄIO²Ù×÷
-	 * ±¾·½·¨ÊÇÔÚDefaultResourceLoaderµÄgetResource·½·¨ÖĞ±»µ÷ÓÃµÄ£¬
+	 * å®ä¾‹åŒ–ä¸€ä¸ªFileSystemResourceå¹¶è¿”å›ï¼Œä»¥ä¾¿åç»­å¯¹èµ„æºçš„IOæ“ä½œ
+	 * æœ¬æ–¹æ³•æ˜¯åœ¨DefaultResourceLoaderçš„getResourceæ–¹æ³•ä¸­è¢«è°ƒç”¨çš„ï¼Œ
 	 */
 	@Override
 	protected Resource getResourceByPath(String path) {

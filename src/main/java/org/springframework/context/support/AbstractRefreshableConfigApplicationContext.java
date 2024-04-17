@@ -1,4 +1,4 @@
-/*
+ï»¿/*
  * Copyright 2002-2013 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -39,8 +39,8 @@ import org.springframework.util.StringUtils;
 public abstract class AbstractRefreshableConfigApplicationContext extends AbstractRefreshableApplicationContext
 		implements BeanNameAware, InitializingBean {
 
-	/** ÊµÀı»¯FileSystemXmlApplicationContextÊ±£¬Íê³ÉÁË¸³Öµ£¬
-	 *  loadBeanDefinitionsÊ±½øĞĞÁË»ñÈ¡ */
+	/** å®ä¾‹åŒ–FileSystemXmlApplicationContextæ—¶ï¼Œå®Œæˆäº†èµ‹å€¼ï¼Œ
+	 *  loadBeanDefinitionsæ—¶è¿›è¡Œäº†è·å– */
 	private String[] configLocations;
 
 	private boolean setIdCalled = false;
@@ -61,10 +61,10 @@ public abstract class AbstractRefreshableConfigApplicationContext extends Abstra
 	}
 
 
-	//´¦Àíµ¥¸ö×ÊÔ´ÎÄ¼şÂ·¾¶ÎªÒ»¸ö×Ö·û´®µÄÇé¿ö
+	//å¤„ç†å•ä¸ªèµ„æºæ–‡ä»¶è·¯å¾„ä¸ºä¸€ä¸ªå­—ç¬¦ä¸²çš„æƒ…å†µ
 	public void setConfigLocation(String location) {
 	   //String CONFIG_LOCATION_DELIMITERS = ",; /t/n";  
-	   //¼´¶à¸ö×ÊÔ´ÎÄ¼şÂ·¾¶Ö®¼äÓÃ¡± ,; /t/n¡±·Ö¸ô£¬½âÎö³ÉÊı×éĞÎÊ½  
+	   //å³å¤šä¸ªèµ„æºæ–‡ä»¶è·¯å¾„ä¹‹é—´ç”¨â€ ,; /t/nâ€åˆ†éš”ï¼Œè§£ææˆæ•°ç»„å½¢å¼  
 		setConfigLocations(StringUtils.tokenizeToStringArray(location, CONFIG_LOCATION_DELIMITERS));
 	}
 
@@ -72,13 +72,13 @@ public abstract class AbstractRefreshableConfigApplicationContext extends Abstra
 	 * Set the config locations for this application context.
 	 * <p>If not set, the implementation may use a default as appropriate.
 	 */
-	//½âÎöBean¶¨Òå×ÊÔ´ÎÄ¼şµÄÂ·¾¶£¬´¦Àí¶à¸ö×ÊÔ´ÎÄ¼ş×Ö·û´®Êı×é
+	//è§£æBeanå®šä¹‰èµ„æºæ–‡ä»¶çš„è·¯å¾„ï¼Œå¤„ç†å¤šä¸ªèµ„æºæ–‡ä»¶å­—ç¬¦ä¸²æ•°ç»„
 	public void setConfigLocations(String[] locations) {
 		if (locations != null) {
 			Assert.noNullElements(locations, "Config locations must not be null");
 			this.configLocations = new String[locations.length];
 			for (int i = 0; i < locations.length; i++) {
-				//resolvePathÎªÍ¬Ò»¸öÀàÖĞ½«×Ö·û´®½âÎöÎªÂ·¾¶µÄ·½·¨  
+				//resolvePathä¸ºåŒä¸€ä¸ªç±»ä¸­å°†å­—ç¬¦ä¸²è§£æä¸ºè·¯å¾„çš„æ–¹æ³•  
 				this.configLocations[i] = resolvePath(locations[i]).trim();
 			}
 		}
@@ -88,8 +88,8 @@ public abstract class AbstractRefreshableConfigApplicationContext extends Abstra
 	}
 
 	/**
-	 * this.configLocationsÊÇFileSystemXmlApplicationContext¹¹Ôì·½·¨ÖĞ
-	 * Í¨¹ısetConfigLocations(configLocations)·½·¨¸³µÄÖµ
+	 * this.configLocationsæ˜¯FileSystemXmlApplicationContextæ„é€ æ–¹æ³•ä¸­
+	 * é€šè¿‡setConfigLocations(configLocations)æ–¹æ³•èµ‹çš„å€¼
 	 */
 	protected String[] getConfigLocations() {
 		return (this.configLocations != null ? this.configLocations : getDefaultConfigLocations());

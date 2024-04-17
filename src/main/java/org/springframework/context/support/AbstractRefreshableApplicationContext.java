@@ -1,4 +1,4 @@
-/*
+ï»¿/*
  * Copyright 2002-2012 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -75,25 +75,25 @@ public abstract class AbstractRefreshableApplicationContext extends AbstractAppl
 	}
 
 
-	//ÔÚÕâÀïÍê³ÉÁËÈİÆ÷µÄ³õÊ¼»¯£¬²¢¸³Öµ¸ø×Ô¼ºprivateµÄbeanFactoryÊôĞÔ£¬ÎªÏÂÒ»²½µ÷ÓÃ×ö×¼±¸
-	//´Ó¸¸ÀàAbstractApplicationContext¼Ì³ĞµÄ³éÏó·½·¨£¬×Ô¼º×öÁËÊµÏÖ
+	//åœ¨è¿™é‡Œå®Œæˆäº†å®¹å™¨çš„åˆå§‹åŒ–ï¼Œå¹¶èµ‹å€¼ç»™è‡ªå·±privateçš„beanFactoryå±æ€§ï¼Œä¸ºä¸‹ä¸€æ­¥è°ƒç”¨åšå‡†å¤‡
+	//ä»çˆ¶ç±»AbstractApplicationContextç»§æ‰¿çš„æŠ½è±¡æ–¹æ³•ï¼Œè‡ªå·±åšäº†å®ç°
 	@Override
 	protected final void refreshBeanFactory() throws BeansException {
-		//Èç¹ûÒÑ¾­½¨Á¢ÁËIoCÈİÆ÷£¬ÔòÏú»Ù²¢¹Ø±ÕÈİÆ÷
+		//å¦‚æœå·²ç»å»ºç«‹äº†IoCå®¹å™¨ï¼Œåˆ™é”€æ¯å¹¶å…³é—­å®¹å™¨
 		if (hasBeanFactory()) {
 			destroyBeans();
 			closeBeanFactory();
 		}
 		try {
-			//´´½¨IoCÈİÆ÷£¬DefaultListableBeanFactoryÀàÊµÏÖÁËConfigurableListableBeanFactory½Ó¿Ú
+			//åˆ›å»ºIoCå®¹å™¨ï¼ŒDefaultListableBeanFactoryç±»å®ç°äº†ConfigurableListableBeanFactoryæ¥å£
 			DefaultListableBeanFactory beanFactory = createBeanFactory();
 			beanFactory.setSerializationId(getId());
-			//¶¨ÖÆ»¯IoCÈİÆ÷£¬ÈçÉèÖÃÆô¶¯²ÎÊı£¬¿ªÆô×¢½âµÄ×Ô¶¯×°ÅäµÈ
+			//å®šåˆ¶åŒ–IoCå®¹å™¨ï¼Œå¦‚è®¾ç½®å¯åŠ¨å‚æ•°ï¼Œå¼€å¯æ³¨è§£çš„è‡ªåŠ¨è£…é…ç­‰
 			customizeBeanFactory(beanFactory);
-			//ÔØÈëBeanDefinition£¬ÕâÀïÓÖÊ¹ÓÃÁËÒ»¸öÎ¯ÅÉÄ£Ê½£¬ÔÚµ±Ç°Àà¶¨Òå´Ë³éÏó·½·¨£¬×ÓÀàÈİÆ÷¾ßÌåÊµÏÖ
+			//è½½å…¥BeanDefinitionï¼Œè¿™é‡Œåˆä½¿ç”¨äº†ä¸€ä¸ªå§”æ´¾æ¨¡å¼ï¼Œåœ¨å½“å‰ç±»å®šä¹‰æ­¤æŠ½è±¡æ–¹æ³•ï¼Œå­ç±»å®¹å™¨å…·ä½“å®ç°
 			loadBeanDefinitions(beanFactory);
 			synchronized (this.beanFactoryMonitor) {
-				//¸ø×Ô¼ºµÄÊôĞÔ¸³Öµ
+				//ç»™è‡ªå·±çš„å±æ€§èµ‹å€¼
 				this.beanFactory = beanFactory;
 			}
 		}
@@ -142,9 +142,9 @@ public abstract class AbstractRefreshableApplicationContext extends AbstractAppl
 
 
 	/**
-	 * ÔÚÉÏÏÂÎÄÖĞ´´½¨DefaultListableBeanFactoryµÄµØ·½£¬¶øgetInternalParentBeanFactory()µÄÊµÏÖ
-	 * ¿ÉÒÔ²é¿´Æä¸¸ÀàAbstractApplicationContextÖĞµÄÊµÏÖ£¬¸Ã·½·¨»á¸ù¾İÈİÆ÷ÒÑÓĞµÄË«Ç×IoCÈİÆ÷µÄĞÅÏ¢À´
-	 * Éú³ÉDefaultListableBeanFactoryµÄË«Ç×IoCÈİÆ÷
+	 * åœ¨ä¸Šä¸‹æ–‡ä¸­åˆ›å»ºDefaultListableBeanFactoryçš„åœ°æ–¹ï¼Œè€ŒgetInternalParentBeanFactory()çš„å®ç°
+	 * å¯ä»¥æŸ¥çœ‹å…¶çˆ¶ç±»AbstractApplicationContextä¸­çš„å®ç°ï¼Œè¯¥æ–¹æ³•ä¼šæ ¹æ®å®¹å™¨å·²æœ‰çš„åŒäº²IoCå®¹å™¨çš„ä¿¡æ¯æ¥
+	 * ç”ŸæˆDefaultListableBeanFactoryçš„åŒäº²IoCå®¹å™¨
 	 */
 	protected DefaultListableBeanFactory createBeanFactory() {
 		return new DefaultListableBeanFactory(getInternalParentBeanFactory());
@@ -175,8 +175,8 @@ public abstract class AbstractRefreshableApplicationContext extends AbstractAppl
 	}
 
 	/**
-	 * ¸Ã·½·¨Ê¹ÓÃBeanDefinitionReaderÀ´ÔØÈëBeanDefinition£¬ÔÊĞíÓĞ¶àÖÖÔØÈë·½Ê½£¬ÓÃµÄ×î¶àµÄÊÇXML¶¨ÒåµÄĞÎÊ½
-	 * Æä×ÓÀàAbstractXmlApplicationContext½øĞĞÁË¾ßÌåÊµÏÖ
+	 * è¯¥æ–¹æ³•ä½¿ç”¨BeanDefinitionReaderæ¥è½½å…¥BeanDefinitionï¼Œå…è®¸æœ‰å¤šç§è½½å…¥æ–¹å¼ï¼Œç”¨çš„æœ€å¤šçš„æ˜¯XMLå®šä¹‰çš„å½¢å¼
+	 * å…¶å­ç±»AbstractXmlApplicationContextè¿›è¡Œäº†å…·ä½“å®ç°
 	 */
 	protected abstract void loadBeanDefinitions(DefaultListableBeanFactory beanFactory)
 			throws BeansException, IOException;

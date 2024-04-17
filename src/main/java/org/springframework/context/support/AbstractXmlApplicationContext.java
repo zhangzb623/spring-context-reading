@@ -1,4 +1,4 @@
-/*
+ï»¿/*
  * Copyright 2002-2012 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -70,27 +70,27 @@ public abstract class AbstractXmlApplicationContext extends AbstractRefreshableC
 	}
 
 	/*
-	 * ÊµÏÖÁËÒ¯ÀàAbstractRefreshableApplicationContextµÄ³éÏó·½·¨
+	 * å®ç°äº†çˆ·ç±»AbstractRefreshableApplicationContextçš„æŠ½è±¡æ–¹æ³•
 	 */
 	@Override
 	protected void loadBeanDefinitions(DefaultListableBeanFactory beanFactory) throws BeansException, IOException {
-		//DefaultListableBeanFactoryÊµÏÖÁËBeanDefinitionRegistry½Ó¿Ú£¬ÔÚ³õÊ¼»¯XmlBeanDefinitionReaderÊ±
-		//½«BeanDefinition×¢²áÆ÷×¢Èë¸ÃBeanDefinition¶ÁÈ¡Æ÷
-		//´´½¨ ÓÃÓÚ´ÓXmlÖĞ¶ÁÈ¡BeanDefinitionµÄ¶ÁÈ¡Æ÷£¬²¢Í¨¹ı»Øµ÷ÉèÖÃµ½IoCÈİÆ÷ÖĞÈ¥£¬ÈİÆ÷Ê¹ÓÃ¸Ã¶ÁÈ¡Æ÷¶ÁÈ¡BeanDefinition×ÊÔ´
-		//ReaderÖĞÒª³ÖÓĞÈİÆ÷¶ÔÏó£¬ÕâÑùreader¶ÁÈ¡ÍêÁËbeanDefinition¾ÍÄÜ¹»·½±ãµÄ½«beanDefinition¸³Öµ¸øIoCÈİÆ÷
+		//DefaultListableBeanFactoryå®ç°äº†BeanDefinitionRegistryæ¥å£ï¼Œåœ¨åˆå§‹åŒ–XmlBeanDefinitionReaderæ—¶
+		//å°†BeanDefinitionæ³¨å†Œå™¨æ³¨å…¥è¯¥BeanDefinitionè¯»å–å™¨
+		//åˆ›å»º ç”¨äºä»Xmlä¸­è¯»å–BeanDefinitionçš„è¯»å–å™¨ï¼Œå¹¶é€šè¿‡å›è°ƒè®¾ç½®åˆ°IoCå®¹å™¨ä¸­å»ï¼Œå®¹å™¨ä½¿ç”¨è¯¥è¯»å–å™¨è¯»å–BeanDefinitionèµ„æº
+		//Readerä¸­è¦æŒæœ‰å®¹å™¨å¯¹è±¡ï¼Œè¿™æ ·readerè¯»å–å®Œäº†beanDefinitionå°±èƒ½å¤Ÿæ–¹ä¾¿çš„å°†beanDefinitionèµ‹å€¼ç»™IoCå®¹å™¨
 		XmlBeanDefinitionReader beanDefinitionReader = new XmlBeanDefinitionReader(beanFactory);
 
 		beanDefinitionReader.setEnvironment(this.getEnvironment());
-		//ÉèÖÃ ×ÊÔ´¼ÓÔØÆ÷£¬ÓÉÓÚ±¾ÀàµÄÌ«Ò¯Ò¯ÀàAbstractApplicationContext
-		//¼Ì³ĞÁËDefaultResourceLoader£¬Òò´Ë£¬±¾ÈİÆ÷×ÔÉíÒ²ÊÇÒ»¸ö×ÊÔ´¼ÓÔØÆ÷
+		//è®¾ç½® èµ„æºåŠ è½½å™¨ï¼Œç”±äºæœ¬ç±»çš„å¤ªçˆ·çˆ·ç±»AbstractApplicationContext
+		//ç»§æ‰¿äº†DefaultResourceLoaderï¼Œå› æ­¤ï¼Œæœ¬å®¹å™¨è‡ªèº«ä¹Ÿæ˜¯ä¸€ä¸ªèµ„æºåŠ è½½å™¨
 		beanDefinitionReader.setResourceLoader(this);
-		//ÉèÖÃSAX½âÎöÆ÷£¬SAX£¨simple API for XML£©ÊÇÁíÒ»ÖÖXML½âÎö·½·¨¡£Ïà±ÈÓÚDOM£¬SAXËÙ¶È¸ü¿ì£¬Õ¼ÓÃÄÚ´æ¸üĞ¡¡£
-		//ËüÖğĞĞÉ¨ÃèÎÄµµ£¬Ò»±ßÉ¨ÃèÒ»±ß½âÎö¡£Ïà±ÈÓÚÏÈ½«Õû¸öXMLÎÄ¼şÉ¨Ãè½øÄÚ´æ£¬ÔÙ½øĞĞ½âÎöµÄDOM£¬SAX¿ÉÒÔÔÚ½âÎöÎÄµµµÄÈÎÒâÊ±¿ÌÍ£Ö¹½âÎö£¬µ«²Ù×÷Ò²±ÈDOM¸´ÔÓ¡£
+		//è®¾ç½®SAXè§£æå™¨ï¼ŒSAXï¼ˆsimple API for XMLï¼‰æ˜¯å¦ä¸€ç§XMLè§£ææ–¹æ³•ã€‚ç›¸æ¯”äºDOMï¼ŒSAXé€Ÿåº¦æ›´å¿«ï¼Œå ç”¨å†…å­˜æ›´å°ã€‚
+		//å®ƒé€è¡Œæ‰«ææ–‡æ¡£ï¼Œä¸€è¾¹æ‰«æä¸€è¾¹è§£æã€‚ç›¸æ¯”äºå…ˆå°†æ•´ä¸ªXMLæ–‡ä»¶æ‰«æè¿›å†…å­˜ï¼Œå†è¿›è¡Œè§£æçš„DOMï¼ŒSAXå¯ä»¥åœ¨è§£ææ–‡æ¡£çš„ä»»æ„æ—¶åˆ»åœæ­¢è§£æï¼Œä½†æ“ä½œä¹Ÿæ¯”DOMå¤æ‚ã€‚
 		beanDefinitionReader.setEntityResolver(new ResourceEntityResolver(this));
 
-		//³õÊ¼»¯beanDefinition¶ÁÈ¡Æ÷£¬¸Ã·½·¨Í¬Ê±ÆôÓÃÁËXmlµÄĞ£Ñé»úÖÆ
+		//åˆå§‹åŒ–beanDefinitionè¯»å–å™¨ï¼Œè¯¥æ–¹æ³•åŒæ—¶å¯ç”¨äº†Xmlçš„æ ¡éªŒæœºåˆ¶
 		initBeanDefinitionReader(beanDefinitionReader);
-		//Bean¶ÁÈ¡Æ÷ÕæÕıÊµÏÖ¼ÓÔØµÄ·½·¨
+		//Beanè¯»å–å™¨çœŸæ­£å®ç°åŠ è½½çš„æ–¹æ³•
 		loadBeanDefinitions(beanDefinitionReader);
 	}
 
@@ -106,27 +106,27 @@ public abstract class AbstractXmlApplicationContext extends AbstractRefreshableC
 		reader.setValidating(this.validating);
 	}
 
-	//ÓÃ´«½øÀ´µÄXmlBeanDefinitionReader¶ÁÈ¡Æ÷¼ÓÔØXmlÎÄ¼şÖĞµÄBeanDefinition
+	//ç”¨ä¼ è¿›æ¥çš„XmlBeanDefinitionReaderè¯»å–å™¨åŠ è½½Xmlæ–‡ä»¶ä¸­çš„BeanDefinition
 	protected void loadBeanDefinitions(XmlBeanDefinitionReader reader) throws BeansException, IOException {
-		// ClassPathXmlApplicationContextÓëFileSystemXmlApplicationContext
-		// ÔÚÕâÀïµÄµ÷ÓÃ³öÏÖ·ÖÆç£¬¸÷×Ô°´²»Í¬µÄ·½Ê½½âÎöResource
-		// ×îºóÔÚ¾ßÌåµÄ½âÎöºÍBeanDefinition¶¨Î»ÉÏÓÖ»áÊâÍ¾Í¬¹é
+		// ClassPathXmlApplicationContextä¸FileSystemXmlApplicationContext
+		// åœ¨è¿™é‡Œçš„è°ƒç”¨å‡ºç°åˆ†æ­§ï¼Œå„è‡ªæŒ‰ä¸åŒçš„æ–¹å¼è§£æResource
+		// æœ€ååœ¨å…·ä½“çš„è§£æå’ŒBeanDefinitionå®šä½ä¸Šåˆä¼šæ®Šé€”åŒå½’
 		 
-		//»ñÈ¡´æ·ÅÁËBeanDefinitionµÄËùÓĞResource£¬
-		//FileSystemXmlApplicationContextÀàÎ´¶ÔgetConfigResources()½øĞĞÖØĞ´£¬
-		//ËùÒÔµ÷ÓÃ¸¸ÀàµÄ£¬return null¡£
-		//¶øClassPathXmlApplicationContext¶Ô¸Ã·½·¨½øĞĞÁËÖØĞ´£¬·µ»ØÉèÖÃµÄÖµ
+		//è·å–å­˜æ”¾äº†BeanDefinitionçš„æ‰€æœ‰Resourceï¼Œ
+		//FileSystemXmlApplicationContextç±»æœªå¯¹getConfigResources()è¿›è¡Œé‡å†™ï¼Œ
+		//æ‰€ä»¥è°ƒç”¨çˆ¶ç±»çš„ï¼Œreturn nullã€‚
+		//è€ŒClassPathXmlApplicationContextå¯¹è¯¥æ–¹æ³•è¿›è¡Œäº†é‡å†™ï¼Œè¿”å›è®¾ç½®çš„å€¼
 		Resource[] configResources = getConfigResources();
 		if (configResources != null) {
-			//Xml Bean¶ÁÈ¡Æ÷µ÷ÓÃÆä¸¸ÀàAbstractBeanDefinitionReader¶ÁÈ¡¶¨Î»µÄBean¶¨Òå×ÊÔ´
+			//Xml Beanè¯»å–å™¨è°ƒç”¨å…¶çˆ¶ç±»AbstractBeanDefinitionReaderè¯»å–å®šä½çš„Beanå®šä¹‰èµ„æº
 			reader.loadBeanDefinitions(configResources);
 		}
 		
-		//µ÷ÓÃ¸¸ÀàAbstractRefreshableConfigApplicationContextµÄÊµÏÖ
-		//ÓÅÏÈ·µ»ØFileSystemXmlApplicationContext¹¹Ôì·½·¨ÖĞµ÷ÓÃsetConfigLocations()·½·¨ÉèÖÃµÄ×ÊÔ´Â·¾¶
+		//è°ƒç”¨çˆ¶ç±»AbstractRefreshableConfigApplicationContextçš„å®ç°
+		//ä¼˜å…ˆè¿”å›FileSystemXmlApplicationContextæ„é€ æ–¹æ³•ä¸­è°ƒç”¨setConfigLocations()æ–¹æ³•è®¾ç½®çš„èµ„æºè·¯å¾„
 		String[] configLocations = getConfigLocations();
 		if (configLocations != null) {
-			//XmlBeanDefinitionReader¶ÁÈ¡Æ÷µ÷ÓÃÆä¸¸ÀàAbstractBeanDefinitionReaderµÄ·½·¨´ÓÅäÖÃÎ»ÖÃ¼ÓÔØBeanDefinition
+			//XmlBeanDefinitionReaderè¯»å–å™¨è°ƒç”¨å…¶çˆ¶ç±»AbstractBeanDefinitionReaderçš„æ–¹æ³•ä»é…ç½®ä½ç½®åŠ è½½BeanDefinition
 			reader.loadBeanDefinitions(configLocations);
 		}
 	}

@@ -1,4 +1,4 @@
-
+﻿
 /**
  *
  * Provides a strategy for MBeanInfo assembly. Used by MBeanExporter to

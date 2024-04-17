@@ -1,4 +1,4 @@
-
+﻿
 /**
  *
  * Support for class instrumentation on GlassFish / Sun Application Server.

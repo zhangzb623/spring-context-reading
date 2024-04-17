@@ -1,4 +1,4 @@
-/*
+ï»¿/*
 o * Copyright 2002-2012 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -26,8 +26,8 @@ import org.springframework.core.io.support.ResourcePatternResolver;
  * Central interface to provide configuration for an application.
  * This is read-only while the application is running, but may be
  * reloaded if the implementation supports this.
- * ÎªÓ¦ÓÃ³ÌĞòÌá¹©ÅäÖÃµÄÖĞÑë½Ó¿Ú¡£´Ë½Ó¿ÚÔÚÓ¦ÓÃ³ÌĞòÔËĞĞÊ±ÊÇÖ»¶ÁµÄ£¬
- * µ«Èç¹ûÊµÏÖÖ§³Ö´Ë½Ó¿Ú£¬Ôò¿ÉÒÔÖØĞÂ¼ÓÔØ¡£
+ * ä¸ºåº”ç”¨ç¨‹åºæä¾›é…ç½®çš„ä¸­å¤®æ¥å£ã€‚æ­¤æ¥å£åœ¨åº”ç”¨ç¨‹åºè¿è¡Œæ—¶æ˜¯åªè¯»çš„ï¼Œ
+ * ä½†å¦‚æœå®ç°æ”¯æŒæ­¤æ¥å£ï¼Œåˆ™å¯ä»¥é‡æ–°åŠ è½½ã€‚
  *
  * <p>An ApplicationContext provides:
  * <ul>
